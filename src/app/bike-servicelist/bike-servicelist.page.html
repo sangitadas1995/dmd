@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start" color="light">
+            <ion-back-button defaultHref="/catagory" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title class="title"> Our Services</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="drlist">
+        <ion-list>
+            <ion-item class="ion-no-padding" lines="full" *ngFor="let item of  services" routerLink="/service-details/{{item.id}}">
+                <ion-thumbnail slot="start">
+                    <img src="{{item.service_image_url}}" alt="service image">
+                </ion-thumbnail>
+                <ion-chip>
+                    <h2>{{item.name}} <span>₹ {{item.price}}</span></h2>
+                    <p>{{item.description}}</p>
+                    <a routerLink="/service-details/{{item.id}}">Details</a>
+                </ion-chip>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

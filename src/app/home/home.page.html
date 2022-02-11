@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary content1">
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="/catagory" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title"> Home</ion-title>
+
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <ion-card class="part">
+    <ion-slides [options]="looking" autoplay="3000" loop="true" speed="300" pager="true">
+      <ion-slide>
+        <div class="look-box">
+          <div class="pic">
+            <img src="../../assets/images/car1.svg">
+          </div>
+          <div><h2>Bike</h2></div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="look-box">
+          <div class="pic">
+            <img src="../../assets/images/car1.svg">
+          </div>
+          <div><h2> Car</h2></div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+</ion-content>
+
+
+
+
+
+
+
