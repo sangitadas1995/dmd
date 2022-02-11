@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">CheckOut </ion-title>
+
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <div class="bg">
+    <div class="box">
+      <h2>Enter your  address details</h2>
+      
+      <form >
+        <ion-item >
+          <ion-input placeholder="User Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input  placeholder="Phone"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-textarea  placeholder="Address"></ion-textarea>
+        </ion-item>
+       
+        <ion-button routerLink="/calender"  class="w-100" type="submit" >Submit</ion-button>
+      </form>
+      <ion-button routerLink="/calender"  class="w-100" type="submit" >Order Now</ion-button>
+    </div>
+
+  </div>
+</ion-content>
