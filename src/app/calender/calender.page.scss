@@ -1,16 +1,17 @@
 
 ion-content{
-    h2{font-size: 17px;margin: 14px 0;}
-    ion-row{ background: var(--ion-color-primary); color: #fff }
-    ion-button{--padding-start:0;--padding-end: 0; color: #fff; }
-    .add{padding: 8px;}
-    ion-item {
-      ion-buttons {
-        ion-button {margin-left: 20px; font-weight: bold;
-          color: var(--ion-color-primary);
-        }
+  .row-card{
+    background: url("../../assets/images/home.jpg") no-repeat ; background-size: cover ; height: 100%;
+    .timedate{
+      ion-datetime{
+        background: transparent;
       }
-  
+      .w-100{
+        width: 100%;
     }
+     }
+  }
+  
+  
   }
   

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="/details" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Cart </ion-title>
+
+  </ion-toolbar>
+</ion-header> 
+
+
+<ion-content>
+  <div class="drlist bg">
+  <ion-list >
+    <ion-item >
+      <h3>Shoping List</h3>
+    </ion-item>
+    <ion-item lines="full" *ngFor="let item of  cart; let i=index" >
+      <ion-thumbnail slot="start">
+          <img src="{{item.image}}">
+      </ion-thumbnail>
+      <ion-chip>
+          <h2>{{item.heading}} <span>₹{{item.price}}</span></h2>
+          <p>{{item.sortdetails}}</p>
+
+          <!-- <div class="increment">
+            <ion-button  class="qut" (click)="dec(i)" type="button" id="decrement">-</ion-button>
+                <Span>{{currentNo}}</Span>
+             <ion-button class="qut" (click)="inc(i)" type="button" id="increment">+</ion-button> 
+            
+           </div> -->
+      </ion-chip>
+  </ion-item>
+
+  <div class="btn">
+    <div class="last-bax">
+      <div class="subtotal">
+      <h6>subtotal</h6>
+      <span class="price">₹ 1100</span>
+    </div>
+    <ion-button  routerLink="/checkout"  class="next">Checkout</ion-button>
+   </div>
+  
+  </div> 
+  </ion-list>
+</div>
+
+
+
+</ion-content>
