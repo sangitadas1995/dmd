@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Payment</ion-title>
+
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <div class="drlist bg">
+  <ion-list >
+    <ion-item >
+      <h3>Shoping List</h3>
+    </ion-item>
+    <ion-item lines="full" *ngFor="let item of  cart; let i=index" >
+      <ion-thumbnail slot="start">
+          <img src="{{item.image}}">
+      </ion-thumbnail>
+      <ion-chip>
+          <h2>{{item.heading}} <span>₹{{item.price}}</span></h2>
+          <p>{{item.sortdetails}}</p>
+      </ion-chip>
+  </ion-item>
+
+  <div class="amount">
+    <div class="last-bax">
+      <div class="subtotal">
+        <h6>Subtotal</h6>
+        <span class="price">₹ 500</span>
+    </div>
+    <div class="subtotal tax">
+      <h6>Tax</h6>
+      <span class="price">₹ 500</span>
+  </div>
+  <div class="subtotal  amounttotal">
+    <h6>Total amount</h6>
+    <span class="price">₹ 500</span>
+</div>
+  
+    <!-- <ion-button  routerLink="/checkout"  class="next">Checkout</ion-button> -->
+   </div>
+  
+  </div> 
+
+  <div class="payment">
+    <ul>
+      <li>
+        <label class="radio-img">
+          <input type="radio" name="payment" value="" />
+          <div class="image" style="background-image: url(../../assets/images/money.png)"></div>
+          <span>COD</span>
+        </label>
+      </li>
+      
+      <li>
+        <label class="radio-img">
+          <input type="radio" name="payment" value="" />
+          <div class="image" style="background-image: url(../../assets/images/upi.svg)"></div>
+          <span>UPI</span>
+        </label>
+      </li>
+      <li>
+        <label class="radio-img">
+          <input type="radio" name="payment" value="" />
+          <div class="image" style="background-image: url(../../assets/images/paytm.svg)"></div>
+          <span>Paytm</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+  </ion-list>
+  <ion-button routerLink="/calender"  class="w-100" type="submit" >Payment Now</ion-button>
+</div>
+
+
+
+</ion-content>
+
