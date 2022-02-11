@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="/login" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Register</ion-title>
+
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <div class="bg">
+    <div class="logo">
+      <img src="assets/images/logo.png">
+    </div>
+
+    <div class="box">
+      <h2>Register</h2>
+      <p>Enter your  detail </p>
+      <form [formGroup]="registerForm " (ngSubmit)="submit()"  novalidate >
+        <ion-item >
+          <ion-input  formControlName="name" inputmode="name" placeholder="Name"></ion-input>
+        </ion-item>
+        <ion-item >
+          <ion-input formControlName="email" inputmode="email" placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item >
+          <ion-input formControlName="phone" inputmode="phone"  placeholder="Phone"></ion-input>
+        </ion-item>
+        <ion-item >
+          <ion-input formControlName="password" inputmode="password" type="password"  placeholder="Password"></ion-input>
+        </ion-item>
+        <ion-button  class="w-100" type="submit" >Sign up</ion-button>
+      </form>
+      <p class="ion-text-center" routerLink="/login"> Do you have already resigtered ? please go to Login</p>
+    </div>
+
+  </div>
+</ion-content>
+
