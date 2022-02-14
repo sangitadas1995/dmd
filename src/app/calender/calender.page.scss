@@ -3,6 +3,11 @@ ion-content{
   .row-card{
     background: url("../../assets/images/home.jpg") no-repeat ; background-size: cover ; height: 100%;
     .timedate{
+      h3{
+        font-size: 14px;
+        text-transform: capitalize;
+        margin-left: 20px;
+      }
       ion-datetime{
         background: transparent;
       }
@@ -10,8 +15,28 @@ ion-content{
         width: 100%;
     }
      }
+     ion-datetime{
+       font-size: 12px;
+       ion-label{
+        --font-size: 12px;
+       }
+     }
   }
   
   
   }
+.box-time{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .time-schedule{
+    border: solid 1px #b9b2b2;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+  
+  }
+}
+
   

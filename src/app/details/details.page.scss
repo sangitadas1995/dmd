@@ -45,9 +45,11 @@
         font-family: "Montserrat", sans-serif;
       }
         .increment{
+          width: 100%;
           display: flex;
           justify-content: flex-start;
           align-items: center;
+          border-top: 1px #d7d8da dotted;
           h6{
             font-size: 12px;
                 text-transform: capitalize;
@@ -100,13 +102,7 @@
    }
 
    .last-bax{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .subtotal{
-      width: 50%;
-   
-    }
+    
     
     .next{
       width: 95%;
@@ -121,6 +117,11 @@
    
 
    
-   
+   .subtotal{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
    
    

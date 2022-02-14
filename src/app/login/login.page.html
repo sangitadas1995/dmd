@@ -20,10 +20,10 @@
       <p>Enter your login detail to access your account</p>
       <form [formGroup]="loginForm" (ngSubmit)="submit()"  novalidate>
         <ion-item >
-          <ion-input formControlName="name" autocapitalize="true" inputmode="text" placeholder="User Name"></ion-input>
+          <ion-input formControlName="name" autocapitalize="true" input="text" placeholder="User Name"></ion-input>
         </ion-item>
         <ion-item >
-          <ion-input formControlName="password" type="password" inputmode="password" placeholder="Password"></ion-input>
+          <ion-input formControlName="password" type="password" input="password" placeholder="Password"></ion-input>
         </ion-item>
         <ion-button  class="w-100" type="submit" >Login In</ion-button>
       </form>
