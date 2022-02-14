@@ -1,0 +1,145 @@
+ion-content .part {
+  background: #fff;
+  margin: 0 0 0 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+ion-content .part .look-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 300px;
+}
+
+ion-content .part .look-box .pic img {
+  width: 100%;
+  height: 100%;
+}
+
+ion-content .details {
+  background: #f2f2f2;
+  padding: 15px;
+  border-radius: 0;
+  border-radius: 2px;
+  margin: 0 5px;
+}
+
+ion-content .details .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ion-content .details .heading span {
+  color: var(--ion-color-primary);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+ion-content .details .heading h4 {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+ion-content .details p {
+  font-size: 13px;
+  margin: 15px 0;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+}
+
+ion-content .details .increment {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px #d7d8da dotted;
+}
+
+ion-content .details .increment h6 {
+  font-size: 12px;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+}
+
+ion-content .details .increment span {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  color: #0059ff;
+}
+
+ion-content .details .increment .qut {
+  font-size: 20px;
+  --background: rgb(150, 165, 250) !important;
+  --color: #fff;
+  --border-radius: 0;
+}
+
+ion-content .details .increment span {
+  padding: 5px;
+  display: block;
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box .cart ion-button {
+  --background: rgb(150, 165, 250) !important;
+}
+
+.last-bax .next {
+  width: 95%;
+  --padding: 10px 5px !important;
+  --border-radius: 0;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.subtotal {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=details.page.css.map */

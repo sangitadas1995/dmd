@@ -1,0 +1,41 @@
+ion-content .part {
+  background: #f2f2f2;
+  margin: 0 0 0 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+ion-content .part .look-box {
+  background: #f2f2f2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+ion-content .part .look-box .pic img {
+  width: 250px;
+}
+
+ion-content .part .look-box div {
+  margin-top: 20px;
+}
+
+ion-content .part .look-box div h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #212121;
+}
+/*# sourceMappingURL=home.page.css.map */

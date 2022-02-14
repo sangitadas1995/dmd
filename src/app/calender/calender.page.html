@@ -14,7 +14,7 @@
         <ion-col size="12">
             <div class="timedate">
                 <h3>Select your date</h3>
-                <ion-datetime  size="cover" displayFormat="MMMM YYYY" presentation="time-date" [(ngModel)]="myDate" (ionChange)="datechange(datetime.value)" #datetime="ngModel" required [min]="minDate" name="myDate" (click)="timedata()">
+                <ion-datetime displayFormat="MMMM YYYY" presentation="time-date" [(ngModel)]="myDate" (ionChange)="datechange(datetime.value)" #datetime="ngModel" required [min]="minDate" name="myDate" (click)="timedata()">
                 </ion-datetime>
                 <!-- <ion-button routerLink="/payment"  class="w-100" type="submit" >Next</ion-button> -->
             </div>

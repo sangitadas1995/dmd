@@ -1,0 +1,71 @@
+ion-content .drlist {
+  padding: 0 16px;
+}
+
+ion-content .drlist ion-list {
+  padding: 0;
+}
+
+ion-content .drlist ion-list ion-item {
+  --inner-padding-end: 0;
+}
+
+ion-content .drlist ion-list ion-item ion-thumbnail {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  position: relative;
+}
+
+ion-content .drlist ion-list ion-item ion-thumbnail img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+ion-content .drlist ion-list ion-item ion-chip {
+  border-radius: 0;
+  background: transparent;
+  display: block;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+  min-height: 80px;
+  width: 100%;
+}
+
+ion-content .drlist ion-list ion-item ion-chip h2 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ion-content .drlist ion-list ion-item ion-chip h2 span {
+  color: var(--ion-color-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+ion-content .drlist ion-list ion-item ion-chip p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+  text-transform: capitalize;
+}
+
+ion-content .drlist ion-list ion-item ion-chip a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 300;
+}
+/*# sourceMappingURL=bike-servicelist.page.css.map */

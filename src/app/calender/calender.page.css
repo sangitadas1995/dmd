@@ -1,0 +1,84 @@
+ion-content .row-card {
+  background: url("../../assets/images/home.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ion-content .row-card .timedate h3 {
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-left: 20px;
+}
+
+ion-content .row-card .timedate ion-datetime {
+  background: transparent;
+}
+
+ion-content .row-card .timedate .w-100 {
+  width: 100%;
+}
+
+ion-content .row-card .timedate ion-label {
+  font-size: 12px;
+}
+
+ion-content .row-card ion-datetime {
+  font-size: 12px;
+}
+
+ion-content .row-card ion-datetime ion-label {
+  font-size: 12px;
+}
+
+.box-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box-time .time-schedule {
+  border: solid 1px #b9b2b2;
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 15px;
+}
+
+.box-time .time-schedule ion-list ion-item {
+  width: 45%;
+  float: left;
+  font-size: 12px;
+}
+
+.box-time .time-schedule ion-list ion-item ion-radio {
+  margin-right: 5px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+ion-label {
+  font-size: 12px;
+}
+/*# sourceMappingURL=calender.page.css.map */
