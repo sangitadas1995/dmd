@@ -13,13 +13,7 @@ export class DetailsPage implements OnInit {
     autoplay:true
    };
 
-  //  details=[
-  //   {
-  //     image:"../../assets/images/pic3.jpg",
-  //     heading:"Car",
-  //     price:"₹ 300",
-  //     sortdetails:"Wishing all body"
-  //   }
+  
   public details = []
   public id:any;
   public category = [];
@@ -54,7 +48,7 @@ decrement () {
     var data = await this.api.getServiceDetailsById(id).subscribe((res)=>{
       this.details = res.data;
       this.category = res.data.category;
-      console.log(this.category);
+      //console.log(this.category);
     });
   }
 

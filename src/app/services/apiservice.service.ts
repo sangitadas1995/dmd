@@ -6,6 +6,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 import { Component } from '@angular/core';
 
 
+
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'})
 };
@@ -58,4 +59,21 @@ export class ApiserviceService {
         //catchError(this.handleError)
       );
   }
+
+  dateWiseTime(data): Observable<any> {
+     var header = {
+       headers: new HttpHeaders({
+         'Content-Type': 'application/x-www-form-urlencoded', 
+         //'Authorization': "Bearer "+token
+       })
+     }
+      let urlSearchParams = new URLSearchParams();
+      urlSearchParams.append('bookingDate', data);
+       let body = urlSearchParams.toString();
+     
+        return this.http.post(this.base_url+"get-booking-slots", body, header)
+       .pipe(
+         //catchError(this.handleError)
+       );
+   }
 }

@@ -1,71 +1,39 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start" color="light">
-      <ion-back-button defaultHref="/checkout" text=""></ion-back-button>
-    </ion-buttons>
-    <ion-title class="title">Select Your date and Time</ion-title>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start" color="light">
+            <ion-back-button defaultHref="/checkout" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title class="title">Select Your date and Time</ion-title>
 
-  </ion-toolbar>
+    </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
-  <ion-row class="row-card">
-    <ion-col size="12">
-      <div class="timedate">
-        <h3>Select your date</h3>
-        <ion-datetime displayFormat="MMMM YYYY"
-         presentation="time-date" [(ngModel)]="myDate"
-          (ionChange)="datechange(datetime.value)"  
-          #datetime="ngModel"
-          required
-          [min]="minDate"
-          name="myDate"
-          (click)="timedata()"
-         >
-      </ion-datetime>
-      <!-- <ion-button routerLink="/payment"  class="w-100" type="submit" >Next</ion-button> -->
-      </div>
-    </ion-col>
-    <ion-col>
-      <div class="box-time">
-        <div class="time-schedule">
-          <div class="time-loop">
-            <ion-list>
-              <ion-radio-group value="10.00">
-                <ion-item>
-                  <ion-label>10.00</ion-label>
-                  <ion-radio slot="start" value="10.00"></ion-radio>
-                </ion-item>
-            
-                <ion-item>
-                  <ion-label>9.00</ion-label>
-                  <ion-radio slot="start" value="9.00"></ion-radio>
-                </ion-item>
-            
-                <ion-item>
-                  <ion-label>6.00</ion-label>
-                  <ion-radio slot="start" value="6.00"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>12.00</ion-label>
-                  <ion-radio slot="start" value="12.00"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>8.00</ion-label>
-                  <ion-radio slot="start" value="8.00"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>1.00</ion-label>
-                  <ion-radio slot="start" value="1.00"></ion-radio>
-                </ion-item>
-              </ion-radio-group>
-            </ion-list>
-           
-          </div>
-      </div>
-      </div>
-    </ion-col>
-</ion-row>
+    <ion-row class="row-card">
+        <ion-col size="12">
+            <div class="timedate">
+                <h3>Select your date</h3>
+                <ion-datetime displayFormat="MMMM YYYY" presentation="time-date" [(ngModel)]="myDate" (ionChange)="datechange(datetime.value)" #datetime="ngModel" required [min]="minDate" name="myDate" (click)="timedata()">
+                </ion-datetime>
+                <!-- <ion-button routerLink="/payment"  class="w-100" type="submit" >Next</ion-button> -->
+            </div>
+        </ion-col>
+        <ion-col>
+            <div class="box-time" *ngIf="time">
+                <div class="time-schedule">
+                    <div class="time-loop">
+                        <ion-list>
+                            <ion-radio-group value="10.00">
+                                <ion-item *ngFor="let times of  timesidule">
+                                    <ion-label>{{times.time}}</ion-label>
+                                    <ion-radio slot="start" value="{{times.time}}"></ion-radio>
+                                </ion-item>
+                            </ion-radio-group>
+                        </ion-list>
+                    </div>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
 </ion-content>
-

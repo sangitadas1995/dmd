@@ -1,8 +1,9 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { IonDatetime } from '@ionic/angular';
-//import { format, parseISO } from 'date-fns';
+import { ApiserviceService } from '../services/apiservice.service';
+import { ActivatedRoute, Router  } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-
+import { CommonService } from '../common/common.service';
 @Component({
   selector: 'app-calender',
   templateUrl: './calender.page.html',
@@ -10,20 +11,16 @@ import { ModalController } from '@ionic/angular';
 })
 export class CalenderPage implements OnInit {
   @ViewChild(IonDatetime, { static: true }) datetime: IonDatetime;
- 
 
-  constructor(public modalCtrl: ModalController) {console.log(this.myDate)}
-
-  // time// array//
-   timesidule=[
-    {
-      time:"10.00",
-    },
-    {
-      time:"11.00",
-    }
-  ]
+  constructor(public modalCtrl: ModalController,
+    public api: ApiserviceService,
+    public route:ActivatedRoute,
+  	public router: Router,
+    public common: CommonService) {
+  }
   
+  public timesidule =[]
+  public time:any;
 //past date disable fiexd//
 date = new Date();
   minDate =  new Date(this. date.getTime() - 
@@ -32,19 +29,32 @@ date = new Date();
   // time local fiexd//
   
   myDate: String = new Date(this.date.getTime() - 
-                   this.date.getTimezoneOffset()*60000).toISOString();
+                   this.date.getTimezoneOffset()*60000).toISOString().substring(0, 10);
                               
 
   // data get//
   datechange(value){
-    console.log(value)
-
+    this.getTimeByDate();
   }
  //time//
  timedata(){
   console.log("hi")
  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getTimeByDate();
+  }
+
+   async getTimeByDate(){
+    //console.log(this.myDate);
+    var data = await this.api.dateWiseTime(this.myDate).subscribe((res)=>{
+      this.timesidule = res.data;
+      this.time = true;
+      if(res.success === false){
+        this.common.Toast(res.message);
+        this.time = false;
+      }
+     });
+   }
   
 }
