@@ -1,7 +1,12 @@
 
 ion-content{
+  background: url("../../assets/images/home.jpg") repeat ; background-size: cover;
+  height: 100%;
   .row-card{
-    background: url("../../assets/images/home.jpg") no-repeat ; background-size: cover ; height: 100%;
+    background: url("../../assets/images/home.jpg") repeat ; background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .timedate{
       h3{
         font-size: 14px;
@@ -14,11 +19,15 @@ ion-content{
       .w-100{
         width: 100%;
     }
+    
+      ion-label{
+        font-size: 12px;
+      }
      }
      ion-datetime{
        font-size: 12px;
        ion-label{
-        --font-size: 12px;
+        font-size: 12px;
        }
      }
   }
@@ -35,8 +44,36 @@ ion-content{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-  
+    ion-list{
+      ion-item{
+        width: 45%;
+        float: left;
+        font-size: 12px;
+        radio-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+           width: 15px !important;
+          height: 15px !important;
+          margin-right: 5px;
+        }
+       
+      }
+    }
   }
 }
 
-  
+.w-100{
+   width: 100%;
+}
+
+ion-label{
+  font-size: 12px;
+}
+
+h6{
+  font-size: 11px;
+  margin-left: 20px;
+}
+
+

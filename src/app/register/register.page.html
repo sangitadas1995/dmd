@@ -19,16 +19,16 @@
             <p>Enter your detail </p>
             <form [formGroup]="registerForm " (ngSubmit)="submit()" novalidate>
                 <ion-item>
-                    <input formControlName="name" inputmode="name" placeholder="Name">
+                    <ion-input formControlName="name" autocapitalize="true" input="text" placeholder="User Name"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <input formControlName="email" inputmode="email" placeholder="Email">
+                    <ion-input formControlName="email" autocapitalize="true" input="text" placeholder="email"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <input formControlName="phone" inputmode="phone" placeholder="Phone">
+                    <ion-input formControlName="phone" autocapitalize="true" input="text" placeholder="phone"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <input formControlName="password" inputmode="password" type="password" placeholder="Password">
+                    <ion-input formControlName="name" autocapitalize="true" input="password" placeholder="Password"></ion-input>
                 </ion-item>
                 <ion-button class="w-100" type="submit">Sign up</ion-button>
             </form>

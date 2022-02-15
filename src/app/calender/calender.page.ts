@@ -24,7 +24,7 @@ export class CalenderPage implements OnInit {
 //past date disable fiexd//
 date = new Date();
   minDate =  new Date(this. date.getTime() - 
-              this.date.getTimezoneOffset()*60000).toISOString();
+              this.date.getTimezoneOffset()*60000).toISOString().substring(0, 10);
 
   // time local fiexd//
   
