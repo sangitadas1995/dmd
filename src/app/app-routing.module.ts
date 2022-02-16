@@ -21,7 +21,7 @@ const routes: Routes = [
     loadChildren: () => import('./bike-servicelist/bike-servicelist.module').then( m => m.BikeServicelistPageModule)
   },
   {
-    path: 'calender',
+    path: 'calender/:serviceid',
     loadChildren: () => import('./calender/calender.module').then( m => m.CalenderPageModule)
   },
   {
@@ -37,7 +37,7 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'payment',
+    path: 'payment/:serviceId/:time/:date',
     loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
   },
   {

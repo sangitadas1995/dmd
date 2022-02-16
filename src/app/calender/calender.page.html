@@ -13,7 +13,7 @@
         <ion-col size="12">
             <div class="timedate">
                 <h3>Select your date</h3>
-                <ion-datetime displayFormat="MMMM YYYY" presentation="time-date" [(ngModel)]="myDate" (ionChange)="datechange(datetime.value)" #datetime="ngModel" required [min]="minDate" name="myDate" (click)="timedata()">
+                <ion-datetime displayFormat="MMMM YYYY" presentation="time-date" [(ngModel)]="myDate" (ionChange)="datechange(datetime.value)" #datetime="ngModel" required [min]="minDate" name="myDate">
                 </ion-datetime>
                 <!-- <ion-button routerLink="/payment"  class="w-100" type="submit" >Next</ion-button> -->
             </div>
@@ -26,7 +26,7 @@
                             <ion-radio-group value="10.00">
                                 <ion-item *ngFor="let times of  timesidule">
                                     <ion-label>{{times.time}}</ion-label>
-                                    <ion-radio slot="start" value="{{times.time}}"></ion-radio>
+                                    <ion-radio slot="start" value="{{times.time}}" (click)="timedata(times.time)"></ion-radio>
                                 </ion-item>
                             </ion-radio-group>
                         </ion-list>
@@ -35,7 +35,7 @@
             </div>
         </ion-col>
         <ion-col size="11">
-            <ion-button routerLink="/payment"  class="w-100" type="submit" >Order now</ion-button>
-          </ion-col>
+            <ion-button class="w-100" type="submit" (click)="goToPaymentPage()">Booking now</ion-button>
+        </ion-col>
     </ion-row>
 </ion-content>

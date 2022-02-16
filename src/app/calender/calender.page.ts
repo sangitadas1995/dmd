@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { IonDatetime } from '@ionic/angular';
 import { ApiserviceService } from '../services/apiservice.service';
-import { ActivatedRoute, Router  } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CommonService } from '../common/common.service';
 @Component({
@@ -21,6 +21,8 @@ export class CalenderPage implements OnInit {
   
   public timesidule =[]
   public time:any;
+  public selectedTime:any;
+  public serviceId:any;
 //past date disable fiexd//
 date = new Date();
   minDate =  new Date(this. date.getTime() - 
@@ -34,15 +36,20 @@ date = new Date();
 
   // data get//
   datechange(value){
+    //console.log('onchange_date',value);
     this.getTimeByDate();
   }
  //time//
- timedata(){
-  console.log("hi")
+ timedata(timevalue){
+  //console.log("hi",timevalue);
+  this.selectedTime = timevalue;
  }
 
   ngOnInit() {
+    this.serviceId = this.route.snapshot.paramMap.get("serviceid");
+    console.log('service_id'+this.serviceId);
     this.getTimeByDate();
+    console.log('selected_date',this.myDate);
   }
 
    async getTimeByDate(){
@@ -56,5 +63,13 @@ date = new Date();
       }
      });
    }
+   goToPaymentPage() {
+    var encode_time = btoa(this.selectedTime);
+    var serviceId   = btoa(this.serviceId);
+    //var decode_time = atob(encode_time);
+   // console.log('+9+989',encode_time);
+    //sconsole.log('nnnnnnnnnnn',decode_time);
+    this.router.navigate(['/payment/'+serviceId+'/'+encode_time+'/'+this.myDate]);
+  }
   
 }
