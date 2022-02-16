@@ -47,9 +47,9 @@ date = new Date();
 
   ngOnInit() {
     this.serviceId = this.route.snapshot.paramMap.get("serviceid");
-    console.log('service_id'+this.serviceId);
+    //console.log('service_id'+this.serviceId);
     this.getTimeByDate();
-    console.log('selected_date',this.myDate);
+    //console.log('selected_date',this.myDate);
   }
 
    async getTimeByDate(){

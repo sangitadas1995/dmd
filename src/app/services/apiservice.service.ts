@@ -75,5 +75,22 @@ export class ApiserviceService {
        .pipe(
          //catchError(this.handleError)
        );
-   }
+  }
+
+  getBookingDetails(data): Observable<any> {
+    var header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded', 
+        //'Authorization': "Bearer "+token
+      })
+    }
+    let urlSearchParams = new URLSearchParams();
+      urlSearchParams.append("service_id", data);
+      let url = this.base_url+"get-booking-details?service_id="+data;
+      var result = this.http.get(url, header)
+      return result
+      .pipe(
+        //catchError(this.handleError)
+      );
+  }
 }

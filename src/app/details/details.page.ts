@@ -17,7 +17,6 @@ export class DetailsPage implements OnInit {
   public details = []
   public id:any;
   public category = [];
-  
 
    inc(){
 
@@ -28,16 +27,6 @@ export class DetailsPage implements OnInit {
     public route:ActivatedRoute,
   	public router: Router) { }
 
-  currentNumber = 1;
-
-  increment() {
-    this.currentNumber++;
-}
-
-decrement () {
-  if(this.currentNumber>1){
-      this.currentNumber--;}
-}
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get("id");
     //console.log(this.id);
