@@ -1,50 +1,53 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start" color="light">
-      <ion-back-button defaultHref="" text=""></ion-back-button>
-    </ion-buttons>
-    <ion-title class="title">CheckOut </ion-title>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start" color="light">
+            <ion-back-button defaultHref="" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title class="title">CheckOut </ion-title>
 
-  </ion-toolbar>
-</ion-header> 
+    </ion-toolbar>
+</ion-header>
 
 <ion-content>
-  <div class="bg">
-    <div class="box">
-      <h2>Enter your  address details</h2>
-      
-      <form  [formGroup]="checkForm" (ngSubmit)="checkout()"  novalidate>
-        <!-- <ion-item >
+    <div class="bg">
+        <div class="box">
+            <h2>Enter your address details</h2>
+
+            <form [formGroup]="checkForm" (ngSubmit)="checkout()" novalidate>
+                <!-- <ion-item >
           <ion-input type="hedden" placeholder="service_id"></ion-input>
         </ion-item> -->
-        <ion-item>
-          <ion-input placeholder="First Name" type="text" name="first_name"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input  placeholder="Last Name" name="last_name"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input  placeholder="House no" name="house_no"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input  placeholder="City" name="city"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input  placeholder="State" name="state"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input  placeholder="Pin code" name="pin"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input  placeholder="Phone" name="phone"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-textarea  placeholder="Address" name="address"></ion-textarea>
-        </ion-item>
-       
-        <ion-button routerLink="/payment"  class="w-100" type="submit" >Submit</ion-button>
-      </form>
-      <!-- <ion-button routerLink="/calender"  class="w-100" type="submit" >Order Now</ion-button> -->
+                <ion-item>
+                    <ion-input placeholder="First Name" type="text" name="first_name"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input placeholder="Last Name" name="last_name"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input placeholder="Email" name="email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input placeholder="Phone" name="phone"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input placeholder="House no" name="house_no"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input placeholder="City" name="city"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input placeholder="State" name="state"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input placeholder="Pin code" name="pin"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-textarea placeholder="Address" name="address"></ion-textarea>
+                </ion-item>
+
+                <ion-button routerLink="/payment" class="w-100" type="submit">Submit</ion-button>
+            </form>
+            <!-- <ion-button routerLink="/calender"  class="w-100" type="submit" >Order Now</ion-button> -->
+        </div>
     </div>
-  </div>
 </ion-content>

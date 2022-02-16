@@ -12,15 +12,15 @@ export class DetailsPage implements OnInit {
     slidesPerView: 1,
     autoplay:true
    };
-
   
   public details = []
   public id:any;
   public category = [];
-
-   inc(){
-
-   }
+  public service_image_url:any;
+  public name:any;
+  public description:any;
+  public price:any;
+  public categoryId:any;
    
   constructor(
     public api: ApiserviceService,
@@ -35,8 +35,14 @@ export class DetailsPage implements OnInit {
 
   async getServiceDetailsData(id:any){
     var data = await this.api.getServiceDetailsById(id).subscribe((res)=>{
-      this.details = res.data;
-      this.category = res.data.category;
+      this.details            = res.data;
+      this.category           = res.data.category;
+      this.service_image_url  = res.data.service_image_url;
+      this.name               = res.data.name;
+      this.description        = res.data.description;
+      this.price              = res.data.price;
+      this.id                 = res.data.id;
+      this.categoryId         = res.data.category.id;
       //console.log(this.category);
     });
   }

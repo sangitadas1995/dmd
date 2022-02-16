@@ -36,18 +36,15 @@ date = new Date();
 
   // data get//
   datechange(value){
-    //console.log('onchange_date',value);
     this.getTimeByDate();
   }
  //time//
  timedata(timevalue){
-  //console.log("hi",timevalue);
   this.selectedTime = timevalue;
  }
 
   ngOnInit() {
     this.serviceId = this.route.snapshot.paramMap.get("serviceid");
-    //console.log('service_id'+this.serviceId);
     this.getTimeByDate();
     //console.log('selected_date',this.myDate);
   }
