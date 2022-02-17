@@ -27,7 +27,17 @@ export class PaymentPage implements OnInit {
     this.id = atob(this.route.snapshot.paramMap.get("serviceId"));
     this.getBookingDetailsData(this.id);
   }
+  cart=[
 
+    {
+      id:1,
+      image:"../../assets/images/pic3.jpg",
+      heading:"Bike",
+      price:"300",
+      sortdetails:"Wishing all body"
+    }
+    
+  ]
   async getBookingDetailsData(id:any){
     var data = await this.api.getBookingDetails(id).subscribe((res)=>{
       this.service_details    = res.data.service_details;

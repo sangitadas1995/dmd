@@ -1,0 +1,65 @@
+ion-content{
+    .part{
+     background: #f2f2f2;  margin: 0 0 0 0; border-radius: 0; box-shadow: none;
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     //flex-direction: column;
+     height: 600px;
+     .look-box{
+       background: #f2f2f2;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       height: 400px;
+       .pic{
+         img{
+           width: 250px;
+         }
+       }
+       div{
+            margin-top: 20px;
+         h2{ 
+             margin: 0 0 4px; 
+             font-size: 17px;  
+            font-weight: 800; 
+             color: #212121;
+            }
+       }
+       a{
+        width: 100%;
+        background: #0059ff;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        line-height: 40px;
+        text-transform: capitalize;
+        &:hover{
+          
+            background: #0004ff;
+        }
+      }
+      }
+    }
+    .done{
+        color: rgba(5, 54, 5, 0.74);
+        text-transform: capitalize;
+        font-weight: 500;
+        margin-top: 0 !important;
+    }
+    .code{
+        margin-bottom: 15px;
+        h6{
+            color: #6c63ff;
+            text-transform: capitalize;
+            margin-top: 0 !important;
+            span{
+                color: red;
+                margin-left: 5px;
+            }
+        }
+       
+    }
+  }
+
