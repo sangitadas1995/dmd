@@ -95,18 +95,14 @@ export class ApiserviceService {
   }
 
   saveCustomerInfo(data): Observable<any> {
-    console.log('kjhkjhkjhkjh',data);
-    var header = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded', 
-        //'Authorization': "Bearer "+token
-      })
-    }
-     let urlSearchParams = new URLSearchParams();
-     urlSearchParams.append('bookingDate', data);
+    console.log('5555',data);
+    let urlSearchParams = new URLSearchParams();
+      for(var x in data) {
+        //console.warn('hkjhjkh',x, data[x]);
+        urlSearchParams.append(x, data[x]);
+      }
       let body = urlSearchParams.toString();
-    
-       return this.http.post(this.base_url+"get-booking-slots", body, header)
+        return this.http.post(this.base_url+"proceed-to-checkout", body, httpOptions)
       .pipe(
         //catchError(this.handleError)
       );
