@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ToastController ,ModalController} from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 export class CommonService {
 
   constructor(public loadingController: LoadingController,
-  	public toastController: ToastController) { }
+  	public toastController: ToastController, public modalcontroller:ModalController) { }
     async Toast(msg) {
       const toast = await this.toastController.create({
         message: msg,
@@ -30,5 +30,12 @@ export class CommonService {
       setTimeout(()=>{
         return this.loadingController.dismiss();
       },1000);
+    }
+
+    async modaldismiss() {
+      //this.isLoading = false;
+      setTimeout(()=>{
+        return  this.modalcontroller.dismiss();
+      },100);
     }
 }

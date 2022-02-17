@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../services/apiservice.service';
+import { CommonService } from '../common/common.service';
 import { ActivatedRoute, Router  } from '@angular/router';
+import { ModalController,NavParams } from '@ionic/angular';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.page.html',
   styleUrls: ['./payment.page.scss'],
 })
-export class PaymentPage implements OnInit {
+export class PaymentPage implements OnInit { 
+
   public service_details =[];
   public id:any;
   public bookingInfo =[];
@@ -18,26 +21,20 @@ export class PaymentPage implements OnInit {
   public tax:any;
   public total_amount:any;
   public serviceId:any;
-
+  public  IsmodelShow:any;
+  
+  modalVisible = false;
   constructor( public api: ApiserviceService,
     public route:ActivatedRoute,
-  	public router: Router) { }
+  	public router: Router, public common: CommonService) { }
+    public modalController: ModalController
 
   ngOnInit() {
     this.id = atob(this.route.snapshot.paramMap.get("serviceId"));
     this.getBookingDetailsData(this.id);
+   
   }
-  cart=[
-
-    {
-      id:1,
-      image:"../../assets/images/pic3.jpg",
-      heading:"Bike",
-      price:"300",
-      sortdetails:"Wishing all body"
-    }
-    
-  ]
+ 
   async getBookingDetailsData(id:any){
     var data = await this.api.getBookingDetails(id).subscribe((res)=>{
       this.service_details    = res.data.service_details;
@@ -52,5 +49,15 @@ export class PaymentPage implements OnInit {
       this.total_amount       = res.data.total_amount;
     });
   }
+ 
 
+  close(){
+    console.log("hi")
+    this.common.modaldismiss();
+
+  }
+
+  
+
+  
 }
