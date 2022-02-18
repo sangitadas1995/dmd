@@ -1,27 +1,23 @@
-<!-- <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start" color="light">
-      <ion-back-button defaultHref="" text=""></ion-back-button>
-    </ion-buttons>
-    <ion-title class="title">Thank You</ion-title>
-
-  </ion-toolbar>
-</ion-header>  -->
-
 <ion-content>
-  <ion-card class="part">
-    <div class="slider-box">
-      <div *ngFor="let item of  slider">
-        <div class="look-box">
-          <div class="pic">
-            <img src="{{item.image}}">
-          </div>
-          <div><h2>{{item.title}}</h2></div>
-          <div class="done"><p>Payment done successfully</p></div>
-          <div class="code"><h6>Product code: <span>7889824</span></h6></div>
-          <a   routerLink="/home"  class="next">Go to home</a>
+    <ion-card class="part">
+        <div class="slider-box">
+            <div *ngFor="let item of  slider">
+                <div class="look-box">
+                    <div class="pic">
+                        <img src="{{item.image}}" alt="bookingImage">
+                    </div>
+                    <div>
+                        <h2>{{item.title}}</h2>
+                    </div>
+                    <div class="done">
+                        <p>Booking Placed successfully</p>
+                    </div>
+                    <div class="code">
+                        <h6>Booking Code: <span>{{bookingNo}}</span></h6>
+                    </div>
+                    <a routerLink="/home" class="next">Go to home</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </ion-card>
+    </ion-card>
 </ion-content>

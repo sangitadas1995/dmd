@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router  } from '@angular/router';
 @Component({
   selector: 'app-thankyou',
   templateUrl: './thankyou.page.html',
@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThankyouPage implements OnInit {
 
-  constructor() { }
-  
+  constructor( public route:ActivatedRoute,
+  	public router: Router) { }
+  public bookingNo:any='';
 
   slider= [
     {
@@ -18,6 +19,7 @@ export class ThankyouPage implements OnInit {
     
   ]
   ngOnInit() {
+    this.bookingNo = this.route.snapshot.paramMap.get("bookingNo");
   }
 
 }
