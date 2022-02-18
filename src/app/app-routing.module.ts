@@ -46,7 +46,7 @@ const routes: Routes = [
   },
   
   {
-    path: 'thankyou',
+    path: 'thankyou/:bookingNo',
     loadChildren: () => import('./thankyou/thankyou.module').then( m => m.ThankyouPageModule)
   },
  
