@@ -81,44 +81,50 @@
 <ion-modal trigger="trigger-button">
   <ng-template>
     <ion-content>
-    <div class="bg">
-        <div class="box">
-            <h2>Enter your address details</h2>
-            <!-- (ngSubmit)="checkout(shippingForm.value)" -->
-            <form #shippingForm="ngForm">
-                <ion-item>
-                    <ion-input placeholder="First Name" type="text" name="first_name" [ngModel]="first_name"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="Last Name" name="last_name" [ngModel]="last_name"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="Email" name="email" [ngModel]="email"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="House no" name="house_no" [ngModel]="house_no"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="City" name="city" [ngModel]="city"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="State" name="state" [ngModel]="state"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="Pin code" name="pin" [ngModel]="pin"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="Phone" name="phone" [ngModel]="phone"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-textarea placeholder="Address" name="address" [ngModel]="address"></ion-textarea>
-                </ion-item>
-
-                <ion-button data-dismiss="modal" (click)="close()" class="w-100" type="submit">Submit</ion-button>
-            </form>
-            <!-- <ion-button routerLink="/calender"  class="w-100" type="submit" >Order Now</ion-button> -->
-        </div>
-    </div>
+        <ion-row>
+            <ion-col size="12">
+                <div class="bg">
+                    <div class="box">
+                        <h2>Enter your address details</h2>
+                        <!-- (ngSubmit)="checkout(shippingForm.value)" -->
+                        <form #shippingForm="ngForm">
+                            <ion-item>
+                                <ion-input placeholder="First Name" type="text" name="first_name" [ngModel]="first_name"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-input placeholder="Last Name" name="last_name" [ngModel]="last_name"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-input placeholder="Email" name="email" [ngModel]="email"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-input placeholder="House no" name="house_no" [ngModel]="house_no"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-input placeholder="City" name="city" [ngModel]="city"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-input placeholder="State" name="state" [ngModel]="state"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-input placeholder="Pin code" name="pin" [ngModel]="pin"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-input placeholder="Phone" name="phone" [ngModel]="phone"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-textarea placeholder="Address" name="address" [ngModel]="address"></ion-textarea>
+                            </ion-item>
+            
+                          
+                            <ion-button  (click)="close()" class="w-100" type="submit">Submit</ion-button>
+                           
+                        </form>
+                        <!-- <ion-button routerLink="/calender"  class="w-100" type="submit" >Order Now</ion-button> -->
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
     </ion-content>
   </ng-template>
 </ion-modal>

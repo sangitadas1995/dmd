@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../services/apiservice.service';
 import { CommonService } from '../common/common.service';
 import { ActivatedRoute, Router  } from '@angular/router';
-import { ModalController,NavParams } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.page.html',
@@ -26,8 +26,9 @@ export class PaymentPage implements OnInit {
   modalVisible = false;
   constructor( public api: ApiserviceService,
     public route:ActivatedRoute,
-  	public router: Router, public common: CommonService) { }
-    public modalController: ModalController
+  	public router: Router, public common: CommonService,
+    private modalController: ModalController) { }
+  
 
   ngOnInit() {
     this.id = atob(this.route.snapshot.paramMap.get("serviceId"));
@@ -54,10 +55,12 @@ export class PaymentPage implements OnInit {
   close(){
     console.log("hi")
     this.common.modaldismiss();
-
+      //this.modalController.dismiss();
   }
 
-  
+  // onClose(isVisible: boolean){
+  //   this.modalVisible = isVisible;
+  //  }
 
   
 }

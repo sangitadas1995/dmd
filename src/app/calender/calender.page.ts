@@ -23,6 +23,7 @@ export class CalenderPage implements OnInit {
   public time:any;
   public selectedTime:any;
   public serviceId:any;
+  public timeGet   = new Date();
 //past date disable fiexd//
 date = new Date();
   minDate =  new Date(this. date.getTime() - 
