@@ -40,16 +40,10 @@ const routes: Routes = [
     path: 'payment/:serviceId/:time/:date',
     loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
   },
+  
+ 
   {
-    path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
-  },
-  {
-    path: 'checkout',
-    loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
-  },
-  {
-    path: 'thankyou',
+    path: 'thankyou/:bookingNo',
     loadChildren: () => import('./thankyou/thankyou.module').then( m => m.ThankyouPageModule)
   },
  

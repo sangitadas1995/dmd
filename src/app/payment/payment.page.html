@@ -12,7 +12,7 @@
     <div class="drlist bg">
         <ion-list>
             <ion-item>
-                <h3>Shoping List</h3>
+                <h3>Booking Information</h3>
             </ion-item>
             <ion-item lines="full">
                 <ion-thumbnail slot="start">
@@ -39,7 +39,7 @@
                         <span class="price">₹ {{total_amount}}</span>
                     </div>
 
-                    <ion-button   id="trigger-button"  class="next">Checkout</ion-button>
+                    <ion-button id="trigger-button" class="next">Checkout</ion-button>
                 </div>
 
             </div>
@@ -48,30 +48,22 @@
                 <ul>
                     <li>
                         <label class="radio-img">
-          <input type="radio" name="payment" value="" />
-          <div class="image" style="background-image: url(../../assets/images/money.png)"></div>
-          <span>COD</span>
-        </label>
+                        <input type="radio" name="payment" value="" />
+                        <div class="image" style="background-image: url(../../assets/images/money.png)" alt="image"></div>
+                        <span>COD</span>
+                        </label>
                     </li>
-<!-- 
-                    <li>
-                        <label class="radio-img">
-          <input type="radio" name="payment" value="" />
-          <div class="image" style="background-image: url(../../assets/images/upi.svg)"></div>
-          <span>UPI</span>
-        </label>
-                    </li> -->
-                    <!-- <li>
-                        <label class="radio-img">
-          <input type="radio" name="payment" value="" />
-          <div class="image" style="background-image: url(../../assets/images/paytm.svg)"></div>
-          <span>Paytm</span>
-        </label>
-                    </li> -->
                 </ul>
+
             </div>
         </ion-list>
-        <ion-button routerLink="/thankyou" class="w-100" type="submit">Payment Now</ion-button>
+        <form #thankuFrom="ngForm" (ngSubmit)="getBookingNo(thankuFrom.value)">
+            <ion-input type="hidden" name="service_id" value="{{serviceId}}" [ngModel]="service_id"></ion-input>
+            <ion-input type="hidden" name="user_id" value="{{userId}}" [ngModel]="user_id"></ion-input>
+            <ion-input type="hidden" name="bookingDate" value="{{bookingDate}}" [ngModel]="bookingDate"></ion-input>
+            <ion-input type="hidden" name="bookingTime" value="{{bookingTime}}" [ngModel]="bookingTime"></ion-input>
+            <ion-button class="w-100" type="submit">Payment Now</ion-button>
+        </form>
     </div>
 
 
@@ -79,50 +71,46 @@
 
 <!-- Use a trigger -->
 <ion-modal trigger="trigger-button">
-  <ng-template>
-    <ion-content>
-    <div class="bg">
-        <div class="box">
-            <h2>Enter your address details</h2>
-            <!-- (ngSubmit)="checkout(shippingForm.value)" -->
-            <form #shippingForm="ngForm">
-                <ion-item>
-                    <ion-input placeholder="First Name" type="text" name="first_name" [ngModel]="first_name"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="Last Name" name="last_name" [ngModel]="last_name"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="Email" name="email" [ngModel]="email"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="House no" name="house_no" [ngModel]="house_no"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="City" name="city" [ngModel]="city"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="State" name="state" [ngModel]="state"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="Pin code" name="pin" [ngModel]="pin"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input placeholder="Phone" name="phone" [ngModel]="phone"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-textarea placeholder="Address" name="address" [ngModel]="address"></ion-textarea>
-                </ion-item>
+    <ng-template>
+        <ion-content>
+            <div class="bg">
+                <div class="box">
+                    <h2>Enter your address details</h2>
+                    <!-- (ngSubmit)="checkout(shippingForm.value)" -->
+                    <form #shippingForm="ngForm" (ngSubmit)="checkout(shippingForm.value)">
+                        <ion-item>
+                            <ion-input placeholder="First Name" type="text" name="first_name" [ngModel]="first_name"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input placeholder="Last Name" name="last_name" [ngModel]="last_name"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input placeholder="Email" name="email" [ngModel]="email"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input placeholder="House no" name="house_no" [ngModel]="house_no"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input placeholder="City" name="city" [ngModel]="city"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input placeholder="State" name="state" [ngModel]="state"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input placeholder="Pin code" name="pin" [ngModel]="pin"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input placeholder="Phone" name="phone" [ngModel]="phone"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-textarea placeholder="Address" name="address" [ngModel]="address"></ion-textarea>
+                        </ion-item>
 
-                <ion-button data-dismiss="modal" (click)="close()" class="w-100" type="submit">Submit</ion-button>
-            </form>
-            <!-- <ion-button routerLink="/calender"  class="w-100" type="submit" >Order Now</ion-button> -->
-        </div>
-    </div>
-    </ion-content>
-  </ng-template>
+                        <ion-button data-dismiss="modal" class="w-100" type="submit">Submit</ion-button>
+                    </form>
+                    <!-- <ion-button routerLink="/calender"  class="w-100" type="submit" >Order Now</ion-button> -->
+                </div>
+            </div>
+        </ion-content>
+    </ng-template>
 </ion-modal>
-
-
-
-
