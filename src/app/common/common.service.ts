@@ -38,4 +38,11 @@ export class CommonService {
         return  this.modalcontroller.dismiss();
       },100);
     }
+    async productDetails() {
+      //this.isLoading = false;
+      setTimeout(()=>{
+        return  this.modalcontroller.dismiss();
+      },100);
+    }
+   
 }

@@ -1,9 +1,18 @@
-<ion-header>
+<!-- <ion-header no-border>
   <ion-toolbar>
-    <ion-title>account</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+  <div class="profile-info-top">
+    <div class="button-row">
+      <div class="profile-div">
+        <img [src]="userData?.image" >
+      </div>
+
+    </div>
+    <h2 class="ion-text-center user-name">{{userData.name}}</h2>
+    <p class="ion-text-center ion-no-margin email-label">{{userData.email}}</p>
+  </div>
 
 </ion-content>

@@ -45,7 +45,43 @@ ion-content .part .look-box div {
 ion-content .part .look-box div h2 {
   margin: 0 0 4px;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 800;
   color: #212121;
 }
-/*# sourceMappingURL=home.page.css.map */
+
+ion-content .part .look-box a {
+  width: 100%;
+  background: #0059ff;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 40px;
+  text-transform: capitalize;
+}
+
+ion-content .part .look-box a:hover {
+  background: #0004ff;
+}
+
+ion-content .done {
+  color: rgba(5, 54, 5, 0.74);
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-top: 0 !important;
+}
+
+ion-content .code {
+  margin-bottom: 15px;
+}
+
+ion-content .code h6 {
+  color: #6c63ff;
+  text-transform: capitalize;
+  margin-top: 0 !important;
+}
+
+ion-content .code h6 span {
+  color: red;
+  margin-left: 5px;
+}
+/*# sourceMappingURL=thankyou.page.css.map */

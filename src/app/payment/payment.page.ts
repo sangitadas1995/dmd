@@ -3,6 +3,7 @@ import { ApiserviceService } from '../services/apiservice.service';
 import { CommonService } from '../common/common.service';
 import { ActivatedRoute, Router  } from '@angular/router';
 import { ModalController,NavParams } from '@ionic/angular';
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.page.html',
@@ -46,6 +47,7 @@ export class PaymentPage implements OnInit {
   	public router: Router, 
     public common: CommonService) { }
     public modalController: ModalController
+   
 
   ngOnInit() {
     this.id               = atob(this.route.snapshot.paramMap.get("serviceId"));
@@ -111,6 +113,9 @@ export class PaymentPage implements OnInit {
 
 
   
-
+  OnClickFunction()
+  {
+    this.router.navigate(['/order-details']);
+  }
   
 }

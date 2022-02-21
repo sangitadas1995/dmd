@@ -1,7 +1,12 @@
-ion-content .row-card {
-  background: url("../../assets/images/home.jpg") no-repeat;
+ion-content {
+  background: url("../../assets/images/home.jpg") repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
+}
+
+ion-content .row-card {
+  background: url("../../assets/images/home.jpg") repeat;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,6 +30,7 @@ ion-content .row-card .timedate ion-datetime {
 
 ion-content .row-card .timedate .w-100 {
   width: 100%;
+  --border-radius: 0 !important;
 }
 
 ion-content .row-card .timedate ion-label {
@@ -70,15 +76,47 @@ ion-content .row-card ion-datetime ion-label {
   font-size: 12px;
 }
 
-.box-time .time-schedule ion-list ion-item ion-radio {
+.box-time .time-schedule ion-list ion-item radio-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 15px !important;
+  height: 15px !important;
   margin-right: 5px;
 }
 
 .w-100 {
   width: 100%;
+  --border-radius: 0 !important;
 }
 
 ion-label {
   font-size: 12px;
+}
+
+h6 {
+  font-size: 11px;
+  margin-left: 20px;
+}
+
+ion-radio {
+  margin: 0 10px 0 0;
+}
+
+.time-part h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 12px;
+  padding: 0 20px 0 20px;
 }
 /*# sourceMappingURL=calender.page.css.map */
