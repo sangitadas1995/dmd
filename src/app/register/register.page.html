@@ -17,18 +17,24 @@
         <div class="box">
             <h2>Register</h2>
             <p>Enter your detail </p>
-            <form [formGroup]="registerForm " (ngSubmit)="submit()" novalidate>
+            <form #registrationFrom="ngForm" (ngSubmit)="submit(registrationFrom.value)" novalidate>
                 <ion-item>
-                    <ion-input formControlName="name" autocapitalize="true" input="text" placeholder="User Name"></ion-input>
+                    <ion-input type="text" placeholder="First Name" name="first_name" [ngModel]="first_name"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-input formControlName="email" autocapitalize="true" input="text" placeholder="email"></ion-input>
+                    <ion-input type="text" placeholder="Last Name" name="last_name" [ngModel]="last_name"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-input formControlName="phone" autocapitalize="true" input="text" placeholder="phone"></ion-input>
+                    <ion-input type="text" placeholder="email" name="email" [ngModel]="email"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-input formControlName="name" autocapitalize="true" input="password" placeholder="Password"></ion-input>
+                    <ion-input type="text" placeholder="phone" name="mobile" [ngModel]="mobile"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="password" placeholder="Password" name="password" [ngModel]="password"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="password" placeholder="Confirm Password" name="confirm_password" [ngModel]="confirm_password"></ion-input>
                 </ion-item>
                 <ion-button class="w-100" type="submit">Sign up</ion-button>
             </form>
