@@ -75,10 +75,15 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    
                    
                 }
                 h6{
                   font-size: 12px;
+                  span{
+                    color: #f00;
+                    margin-left: 5px;
+                  }
                 }
                 
                

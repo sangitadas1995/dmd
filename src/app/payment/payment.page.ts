@@ -113,9 +113,6 @@ export class PaymentPage implements OnInit {
 
 
   
-  OnClickFunction()
-  {
-    this.router.navigate(['/order-details']);
-  }
+ 
   
 }

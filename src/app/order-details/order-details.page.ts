@@ -21,13 +21,13 @@ export class OrderDetailsPage implements OnInit {
   orderDetails = [
     {
     image: 'assets/images/krishana.jpg',
-    productName: 'UserName',
-    email: 'test1@test.com',
+    productName: 'Bike',
+    pNO: '45667'
   },
   {
     image: 'assets/images/krishana.jpg',
-    productName: 'UserName',
-    email: 'test1@test.com',
+    productName: 'Car',
+    pNO: '45667'
   }
   ]
 

@@ -20,7 +20,7 @@
               </ion-thumbnail>
               <ion-chip>
                   <h3>{{item.productName}}</h3>
-                  <h6>Product No:9u900099009</h6>
+                  <h6>Product <span>{{ item.pNO}}</span></h6>
               </ion-chip>
           </ion-item>
          
@@ -41,7 +41,7 @@
               <div class="box">
                  <div class="divClose">
                     <h2 >Product details</h2>
-                    <div class="close" (click)="productDetails()">x</div>
+                    <div class="close" (click)="productDetails()"><ion-icon name="close-outline"></ion-icon></div>
                  </div>
                   <div class="drlist">
                     <ion-list>
