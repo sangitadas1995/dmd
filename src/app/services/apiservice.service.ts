@@ -110,11 +110,24 @@ export class ApiserviceService {
   saveBookingInfo(data): Observable<any> {
     let urlSearchParams = new URLSearchParams();
       for(var x in data) {
-        console.warn('hkjhjkh',x, data[x]);
+        //console.warn('hkjhjkh',x, data[x]);
         urlSearchParams.append(x, data[x]);
       }
       let body = urlSearchParams.toString();
         return this.http.post(this.base_url+"save-booking-details", body, httpOptions)
+      .pipe(
+        //catchError(this.handleError)
+      );
+  }
+
+  registration(data): Observable<any> {
+    let urlSearchParams = new URLSearchParams();
+      for(var x in data) {
+        console.warn('hkjhjkh',x, data[x]);
+        urlSearchParams.append(x, data[x]);
+      }
+      let body = urlSearchParams.toString();
+        return this.http.post(this.base_url+"do-customer-registration", body, httpOptions)
       .pipe(
         //catchError(this.handleError)
       );
