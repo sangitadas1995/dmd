@@ -25,7 +25,7 @@ export class CalenderPage implements OnInit {
   public serviceId:any;
   public timeGet   = new Date();
 //past date disable fiexd//
-date = new Date();
+  date = new Date();
   minDate =  new Date(this. date.getTime() - 
               this.date.getTimezoneOffset()*60000).toISOString().substring(0, 10);
 
@@ -50,7 +50,7 @@ date = new Date();
     //console.log('selected_date',this.myDate);
   }
 
-   async getTimeByDate(){
+  async getTimeByDate(){
     //console.log(this.myDate);
     var data = await this.api.dateWiseTime(this.myDate).subscribe((res)=>{
       this.timesidule = res.data;
@@ -59,14 +59,12 @@ date = new Date();
         this.common.Toast(res.message);
         this.time = false;
       }
-     });
-   }
-   goToPaymentPage() {
+    });
+  }
+
+  goToPaymentPage() {
     var encode_time = btoa(this.selectedTime);
     var serviceId   = btoa(this.serviceId);
-    //var decode_time = atob(encode_time);
-   // console.log('+9+989',encode_time);
-    //sconsole.log('nnnnnnnnnnn',decode_time);
     this.router.navigate(['/payment/'+serviceId+'/'+encode_time+'/'+this.myDate]);
   }
   
