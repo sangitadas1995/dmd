@@ -22,7 +22,7 @@ export class OrderDetailsPage implements OnInit {
     {
     image: 'assets/images/krishana.jpg',
     productName: 'Bike',
-    pNO: '45667'
+    pNO: '436474758'
   },
   {
     image: 'assets/images/krishana.jpg',

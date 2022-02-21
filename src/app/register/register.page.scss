@@ -11,10 +11,16 @@ ion-content{
        border-radius: 15px;
        width: calc(100% - 50px);
     ion-item{     --background: transparent;  margin-bottom: 15px;  border: 1px solid #b3fcfc;  border-radius: 5px;
-      ion-input{ font-size: 12PX; color: #fff; --placeholder-opacity:1;--placeholder-color:rgba(255, 255, 255, 0.692);}
+      ion-input{ font-size: 15PX; text-transform: capitalize;
+        color: #fff; --placeholder-opacity:1;
+        --placeholder-color:rgba(255, 255, 255, 0.692);}
     }
-    h2{font-size: 20px;  font-weight: 500;  color: #fff;  margin: 10px 0;}
-    p{ font-size: 13px;  color: #ffffffad;}
+    h2{font-size: 25px;  font-weight: 500;  color: #fff;  margin: 10px 0;}
+    p{ 
+      font-size: 14px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
   }
   .pic{    display: flex;}
 
