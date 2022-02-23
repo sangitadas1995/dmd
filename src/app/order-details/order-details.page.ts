@@ -8,42 +8,61 @@ import { ActivatedRoute, Router  } from '@angular/router';
   styleUrls: ['./order-details.page.scss'],
 })
 export class OrderDetailsPage implements OnInit {
-
+  public userid:any;
+  public orderDetails:any;
+  public userData:any;
+  public name:any ='';
+  public email:any = '';
+  public mobile:any ='';
+  public userImage:any=''; 
   constructor(public modalcontroller:ModalController,
     public api: ApiserviceService,
     public route:ActivatedRoute,
   	public router: Router) { }
 
   ngOnInit() {
+    this.userid = localStorage.getItem('user_details');
+    this.getBookingDetailsData(this.userid);
+    this.getserdetails(this.userid);
   }
 
-  userData: any = {
-    image: 'assets/images/krishana.jpg',
-    name: 'UserName',
-    email: 'test1@test.com'
-  };
+  // userData: any = {
+  //   image: 'assets/images/krishana.jpg',
+  //   name: 'UserName',
+  //   email: 'test1@test.com'
+  // };
 
-  orderDetails = [
-    {
-    image: 'assets/images/krishana.jpg',
-    productName: 'Bike',
-    pNO: '436474758'
-  },
-  {
-    image: 'assets/images/krishana.jpg',
-    productName: 'Car',
-    pNO: '45667'
-  }
-  ]
+  // orderDetails = [
+  //   {
+  //   image: 'assets/images/krishana.jpg',
+  //   productName: 'Bike',
+  //   pNO: '436474758'
+  // },
+  // {
+  //   image: 'assets/images/krishana.jpg',
+  //   productName: 'Car',
+  //   pNO: '45667'
+  // }
+  // ]
 
   productDetails(){
     this.modalcontroller.dismiss();
   }
 
-  async getServiceDetailsData(id:any){
-    var data = await this.api.getUserDetailsById(id).subscribe((res)=>{
-      
-      //console.log(this.category);
+  async getBookingDetailsData(id){
+    var data = await this.api.getUserBookingDetailsById(id).subscribe((res)=>{
+      this.orderDetails = res.data;
+      //console.log(res);
+    });
+  }
+  async getserdetails(id){
+    var data = await this.api.getUserDetails(id).subscribe((res)=>{
+      console.log(res);
+      this.userData  = res.data;
+      this.name      = res.data.name;
+      this.userImage = res.data.user_image_url;
+      this.email     = res.data.email;
+      this.mobile    = res.data.mobile;
     });
   }
 

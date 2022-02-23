@@ -7,20 +7,20 @@
     <div class="bg">
         <div class="profile-info-top">
             <div class="profile-div">
-                <img [src]="userData.image" alt="userImage">
+                <img [src]="userImage" alt="userImage">
             </div>
-            <h2 class="ion-text-center user-name">{{userData.name}}</h2>
-            <p class="ion-text-center ion-no-margin user-email">{{userData.email}}</p>
+            <h2 class="ion-text-center user-name">{{name}}</h2>
+            <p class="ion-text-center ion-no-margin user-email">{{email}}</p>
         </div>
         <div class="drlist">
             <ion-list *ngFor="let item of orderDetails">
                 <ion-item class="ion-no-padding" lines="full" id="trigger-button">
                     <ion-thumbnail slot="start">
-                        <img src="{{item.image}}" alt="service image">
+                        <img src="{{item.service_image}}" alt="service image">
                     </ion-thumbnail>
                     <ion-chip>
-                        <h3>{{item.productName}}</h3>
-                        <h6>Product: <span>{{ item.pNO}}</span></h6>
+                        <h3>{{item.service_name}}</h3>
+                        <!-- <h6>Product: <span>{{item.uniqueId}}</span></h6> -->
                     </ion-chip>
                 </ion-item>
 

@@ -146,14 +146,35 @@ export class ApiserviceService {
       );
   }
 
-  getUserDetailsById(data): Observable<any> {
+  getUserBookingDetailsById(data): Observable<any> {
+    var header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded', 
+        //'Authorization': "Bearer "+token
+      })
+    }
     let urlSearchParams = new URLSearchParams();
-      for(var x in data) {
-       // console.warn('hkjhjkh',x, data[x]);
-        urlSearchParams.append(x, data[x]);
-      }
-      let body = urlSearchParams.toString();
-        return this.http.post(this.base_url+"do-customer-login", body, httpOptions)
+      urlSearchParams.append("user_id", data);
+      let url = this.base_url+"get-user-booking-list?user_id="+data;
+      var result = this.http.get(url, header)
+      return result
+      .pipe(
+        //catchError(this.handleError)
+      );
+  }
+
+  getUserDetails(data): Observable<any> {
+    var header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded', 
+        //'Authorization': "Bearer "+token
+      })
+    }
+    let urlSearchParams = new URLSearchParams();
+      urlSearchParams.append("user_id", data);
+      let url = this.base_url+"get-user-details?user_id="+data;
+      var result = this.http.get(url, header)
+      return result
       .pipe(
         //catchError(this.handleError)
       );

@@ -6,13 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RemovehtmltagsPipe } from './removehtmltags.pipe';
-
+import { IonicStorageModule } from '@ionic/storage';
 //import { Storage} from '@ionic/storage';
 
 @NgModule({
   declarations: [AppComponent, RemovehtmltagsPipe],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,IonicStorageModule.forRoot()],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

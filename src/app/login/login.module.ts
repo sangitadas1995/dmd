@@ -5,6 +5,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { LoginPage } from './login.page';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { LoginPage } from './login.page';
     IonicModule,
     FormsModule,
     LoginPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IonicStorageModule.forRoot()
   ],
   declarations: [LoginPage]
 })
