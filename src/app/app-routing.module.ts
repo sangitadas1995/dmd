@@ -48,12 +48,13 @@ const routes: Routes = [
   {
     path: 'thankyou/:bookingNo',
     loadChildren: () => import('./thankyou/thankyou.module').then( m => m.ThankyouPageModule)
-  },  {
+  },
+  {
     path: 'account',
     loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
   },
   {
-    path: 'order-details',
+    path: 'order-details/:userId',
     loadChildren: () => import('./order-details/order-details.module').then( m => m.OrderDetailsPageModule)
   },
 

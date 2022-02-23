@@ -26,9 +26,9 @@ export class RegisterPage implements OnInit {
   }
 
   async submit(fromValue){
-    console.log(fromValue);
+    //console.log(fromValue);
     var data = await this.api.registration(fromValue).subscribe((res)=>{
-      console.log(res)
+      ///console.log(res)
       if(res.success === false){
         this.common.Toast(res.message);
       }else{

@@ -132,4 +132,32 @@ export class ApiserviceService {
         //catchError(this.handleError)
       );
   }
+
+  login(data): Observable<any> {
+    let urlSearchParams = new URLSearchParams();
+      for(var x in data) {
+       // console.warn('hkjhjkh',x, data[x]);
+        urlSearchParams.append(x, data[x]);
+      }
+      let body = urlSearchParams.toString();
+        return this.http.post(this.base_url+"do-customer-login", body, httpOptions)
+      .pipe(
+        //catchError(this.handleError)
+      );
+  }
+
+  getUserDetailsById(data): Observable<any> {
+    let urlSearchParams = new URLSearchParams();
+      for(var x in data) {
+       // console.warn('hkjhjkh',x, data[x]);
+        urlSearchParams.append(x, data[x]);
+      }
+      let body = urlSearchParams.toString();
+        return this.http.post(this.base_url+"do-customer-login", body, httpOptions)
+      .pipe(
+        //catchError(this.handleError)
+      );
+  }
+
+
 }

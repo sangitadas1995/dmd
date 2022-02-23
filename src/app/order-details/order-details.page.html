@@ -4,30 +4,30 @@
 </ion-header> -->
 
 <ion-content>
-  <div class="bg">
-    <div class="profile-info-top">
-      <div class="profile-div">
-        <img [src]="userData.image">
-      </div>
-      <h2 class="ion-text-center user-name">{{userData.name}}</h2>
-      <p class="ion-text-center ion-no-margin user-email">{{userData.email}}</p>
-    </div>
-    <div class="drlist">
-      <ion-list *ngFor="let item of orderDetails">
-          <ion-item class="ion-no-padding" lines="full"  id="trigger-button">
-              <ion-thumbnail slot="start" >
-                  <img src="{{item.image}}" alt="service image">
-              </ion-thumbnail>
-              <ion-chip>
-                  <h3>{{item.productName}}</h3>
-                  <h6>Product: <span>{{ item.pNO}}</span></h6>
-              </ion-chip>
-          </ion-item>
-         
-      </ion-list>
-  </div>
+    <div class="bg">
+        <div class="profile-info-top">
+            <div class="profile-div">
+                <img [src]="userData.image" alt="userImage">
+            </div>
+            <h2 class="ion-text-center user-name">{{userData.name}}</h2>
+            <p class="ion-text-center ion-no-margin user-email">{{userData.email}}</p>
+        </div>
+        <div class="drlist">
+            <ion-list *ngFor="let item of orderDetails">
+                <ion-item class="ion-no-padding" lines="full" id="trigger-button">
+                    <ion-thumbnail slot="start">
+                        <img src="{{item.image}}" alt="service image">
+                    </ion-thumbnail>
+                    <ion-chip>
+                        <h3>{{item.productName}}</h3>
+                        <h6>Product: <span>{{ item.pNO}}</span></h6>
+                    </ion-chip>
+                </ion-item>
 
-  </div>
+            </ion-list>
+        </div>
+
+    </div>
 
 
 </ion-content>
@@ -35,45 +35,47 @@
 
 <!-- Use a trigger -->
 <ion-modal trigger="trigger-button">
-  <ng-template>
-      <ion-content>
-          <div class="bg">
-              <div class="box">
-                 <div class="divClose">
-                    <h2 >Booking Details</h2>
-                    <div class="close" (click)="productDetails()"><ion-icon name="close-outline"></ion-icon></div>
-                 </div>
-                  <div class="drlist">
-                    <ion-list>
-                        <ion-item class="ion-no-padding" lines="full">
-                            <ion-thumbnail slot="start" >
-                                <img src="assets/images/krishana.jpg" alt="service image">
-                            </ion-thumbnail>
-                            <ion-chip>
-                                <h3>productName</h3>
-                                <h6>Product No:<span>9u900099009</span></h6>
-                            </ion-chip>
-                        </ion-item>
-                        <div class="amount">
-                          <div class="last-bax">
-                              <div class="subtotal">
-                                  <h6>Subtotal</h6>
-                                  <span class="price">₹ 867</span>
-                              </div>
-                              <div class="subtotal tax">
-                                  <h6>Tax</h6>
-                                  <span class="price">₹ 18</span>
-                              </div>
-                              <div class="subtotal  amounttotal">
-                                  <h6>Total amount</h6>
-                                  <span class="price">₹ 1200</span>
-                              </div>
-                          </div>
-                      </div>
-                    </ion-list>
+    <ng-template>
+        <ion-content>
+            <div class="bg">
+                <div class="box">
+                    <div class="divClose">
+                        <h2>Booking Details</h2>
+                        <div class="close" (click)="productDetails()">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="drlist">
+                        <ion-list>
+                            <ion-item class="ion-no-padding" lines="full">
+                                <ion-thumbnail slot="start">
+                                    <img src="assets/images/krishana.jpg" alt="service image">
+                                </ion-thumbnail>
+                                <ion-chip>
+                                    <h3>productName</h3>
+                                    <h6>Product No:<span>9u900099009</span></h6>
+                                </ion-chip>
+                            </ion-item>
+                            <div class="amount">
+                                <div class="last-bax">
+                                    <div class="subtotal">
+                                        <h6>Subtotal</h6>
+                                        <span class="price">₹ 867</span>
+                                    </div>
+                                    <div class="subtotal tax">
+                                        <h6>Tax</h6>
+                                        <span class="price">₹ 18</span>
+                                    </div>
+                                    <div class="subtotal  amounttotal">
+                                        <h6>Total amount</h6>
+                                        <span class="price">₹ 1200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-list>
+                    </div>
                 </div>
-              </div>
-          </div>
-      </ion-content>
-  </ng-template>
+            </div>
+        </ion-content>
+    </ng-template>
 </ion-modal>

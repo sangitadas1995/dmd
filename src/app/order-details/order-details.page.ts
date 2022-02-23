@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController} from '@ionic/angular';
+import { ApiserviceService } from '../services/apiservice.service';
+import { ActivatedRoute, Router  } from '@angular/router';
 @Component({
   selector: 'app-order-details',
   templateUrl: './order-details.page.html',
@@ -7,7 +9,10 @@ import { ModalController} from '@ionic/angular';
 })
 export class OrderDetailsPage implements OnInit {
 
-  constructor(public modalcontroller:ModalController) { }
+  constructor(public modalcontroller:ModalController,
+    public api: ApiserviceService,
+    public route:ActivatedRoute,
+  	public router: Router) { }
 
   ngOnInit() {
   }
@@ -34,6 +39,14 @@ export class OrderDetailsPage implements OnInit {
   productDetails(){
     this.modalcontroller.dismiss();
   }
+
+  async getServiceDetailsData(id:any){
+    var data = await this.api.getUserDetailsById(id).subscribe((res)=>{
+      
+      //console.log(this.category);
+    });
+  }
+
 
  
 }

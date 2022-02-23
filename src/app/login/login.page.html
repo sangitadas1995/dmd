@@ -18,12 +18,12 @@
         <div class="box">
             <h2>Login</h2>
             <p>Enter your login detail to access your account</p>
-            <form [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
+            <form #loginFrom="ngForm" (ngSubmit)="submit(loginFrom.value)" novalidate>
                 <ion-item>
-                    <ion-input formControlName="name" input="text" placeholder="User Name"></ion-input>
+                    <ion-input type="text" placeholder="User Name" name="mobile" [ngModel]="mobile"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-input formControlName="password" type="password" input="password" placeholder="Password"></ion-input>
+                    <ion-input type="password" type="password" placeholder="Password" name="password" [ngModel]="password"></ion-input>
                 </ion-item>
                 <ion-button style="--background:#0f2f67" class="w-100" type="submit">Log In</ion-button>
             </form>

@@ -1,36 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import { ApiserviceService } from '../services/apiservice.service';
+import { CommonService } from '../common/common.service';
 import { ActivatedRoute, Router  } from '@angular/router';
+///import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
-
-
+  public mobile:any ='';
+  public password:any ='';
+  public userId:any='';
   constructor(
-    private formBuilder: FormBuilder,
+    public api: ApiserviceService,
     public route:ActivatedRoute,
   	public router: Router, 
+    public common: CommonService,
+
     ) { }
 
-loginForm = this.formBuilder.group({
-  name: [""],
-  password: [""]
-})
+  async submit(fromValue){
+    var data = await this.api.login(fromValue).subscribe((res)=>{
+      if(res.success === false){
+        this.common.Toast(res.message);
+      }else{
+       this.userId =  res.data.id;
+        this.common.Toast(res.message);
+        this.router.navigate(['/order-details/'+this.userId]);
+      }
+    });
+  //this.router.navigate(['/order-details']);
+  }
 
-public submit(){
-  console.log(this.loginForm.value)
-  this.router.navigate(['/order-details']);
-}
-  
-
-// OnClickFunction()
-// {
-//   this.router.navigate(['/order-details']);
-// }
   ngOnInit() {
   }
 
