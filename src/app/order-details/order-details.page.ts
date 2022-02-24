@@ -33,7 +33,7 @@ export class OrderDetailsPage implements OnInit {
   async getBookingDetailsData(id){
     var data = await this.api.getUserBookingDetailsById(id).subscribe((res)=>{
       this.orderDetails = res.data;
-      //console.log(res);
+      console.log(res);
     });
   }
   async getserdetails(id){

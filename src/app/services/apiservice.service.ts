@@ -97,7 +97,6 @@ export class ApiserviceService {
   saveCustomerInfo(data): Observable<any> {
     let urlSearchParams = new URLSearchParams();
       for(var x in data) {
-        console.warn('hkjhjkh',x, data[x]);
         urlSearchParams.append(x, data[x]);
       }
       let body = urlSearchParams.toString();

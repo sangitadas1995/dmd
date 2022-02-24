@@ -53,6 +53,7 @@ export class PaymentPage implements OnInit {
     this.id               = atob(this.route.snapshot.paramMap.get("serviceId"));
     this.bookingTime      = atob(this.route.snapshot.paramMap.get("time"));
     this.bookingDate      = this.route.snapshot.paramMap.get("date");
+    this.user_id          = localStorage.getItem('user_details');
     this.getBookingDetailsData(this.id);
    
   }
