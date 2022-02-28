@@ -39,7 +39,7 @@
                         <span class="price">₹ {{total_amount}}</span>
                     </div>
 
-                    <ion-button id="trigger-button" class="next">Checkout</ion-button>
+                    <ion-button id="trigger-button"    class="next">Checkout</ion-button>
                     <!-- <ion-button  (Click)="OnClickFunction()" class="next">Order Details</ion-button> -->
                 </div>
 
@@ -68,16 +68,18 @@
         </form>
     </div>
 
-
-</ion-content>
-
 <!-- Use a trigger -->
 <ion-modal trigger="trigger-button">
     <ng-template>
         <ion-content>
             <div class="bg">
                 <div class="box">
-                    <h2>Enter your address details</h2>
+                    <div class="divClose">
+                        <h2>Enter your address details </h2>
+                        <div class="close" (click)="userDetails()">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </div>
+                    </div>
                     <form #shippingForm="ngForm" (ngSubmit)="checkout(shippingForm.value)">
                         <ion-item>
                             <ion-input placeholder="First Name" type="text" name="first_name" [ngModel]="first_name"></ion-input>
@@ -107,7 +109,7 @@
                             <ion-textarea placeholder="Address" name="address" [ngModel]="address"></ion-textarea>
                         </ion-item>
 
-                        <ion-button data-dismiss="modal" class="w-100" type="submit">Submit</ion-button>
+                        <ion-button  data-dismiss="modal" class="w-100" type="submit">Submit</ion-button>
                     </form>
                     <!-- <ion-button routerLink="/calender"  class="w-100" type="submit" >Order Now</ion-button> -->
                 </div>
@@ -115,3 +117,5 @@
         </ion-content>
     </ng-template>
 </ion-modal>
+</ion-content>
+

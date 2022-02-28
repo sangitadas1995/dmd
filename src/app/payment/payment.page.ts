@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../services/apiservice.service';
 import { CommonService } from '../common/common.service';
 import { ActivatedRoute, Router  } from '@angular/router';
-import { ModalController,NavParams } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-payment',
@@ -45,8 +46,10 @@ export class PaymentPage implements OnInit {
   constructor( public api: ApiserviceService,
     public route:ActivatedRoute,
   	public router: Router, 
-    public common: CommonService) { }
-    public modalController: ModalController
+    public common: CommonService,
+    public modalController: ModalController,
+    public routerOutlet: IonRouterOutlet) { }
+    
    
 
   ngOnInit() {
@@ -114,6 +117,8 @@ export class PaymentPage implements OnInit {
 
 
   
- 
+  userDetails(){
+    this.modalController.dismiss()
+  }
   
 }

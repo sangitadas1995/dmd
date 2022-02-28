@@ -54,9 +54,16 @@ const routes: Routes = [
     loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
   },
   {
-    path: 'order-details/:userId',
+    path: 'order-details',
     loadChildren: () => import('./order-details/order-details.module').then( m => m.OrderDetailsPageModule)
   },
+ 
+  {
+    path: 'single-order-details',
+    loadChildren: () => import('./single-order-details/single-order-details.module').then( m => m.SingleOrderDetailsPageModule)
+  },
+
+
 
  
 ];

@@ -47,6 +47,8 @@ export class OrderDetailsPage implements OnInit {
     });
   }
 
-
- 
+  singleorderDetails(){
+    this.router.navigateByUrl('/single-order-details')
+  }
+  
 }
