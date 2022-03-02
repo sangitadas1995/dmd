@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -25,6 +24,12 @@ export class AppComponent {
 
   ngOnInit() {
     this.userid = localStorage.getItem('user_details');
+    //this.logout();
+  }
+  async logout(){
+    console.log('kjh');
+    localStorage.removeItem("user_details");
+    this.router.navigateByUrl('/login');
   }
 }
 

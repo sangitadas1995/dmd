@@ -62,6 +62,10 @@ const routes: Routes = [
     path: 'single-order-details',
     loadChildren: () => import('./single-order-details/single-order-details.module').then( m => m.SingleOrderDetailsPageModule)
   },
+  {
+    path: 'logout',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 
 
 
