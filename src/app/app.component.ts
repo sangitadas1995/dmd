@@ -9,8 +9,14 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
   public userid:any ='';
-
-  constructor(public router:Router) {}
+  public usercheck:any;
+ public usercheck1:any;
+  constructor(public router:Router) {
+    this.userid = localStorage.getItem('user_details');
+    
+  
+   
+  }
   login(){
     this.router.navigateByUrl('/login')
   }
@@ -22,14 +28,34 @@ export class AppComponent {
     this.router.navigateByUrl('/home')
   }
 
-  ngOnInit() {
-    this.userid = localStorage.getItem('user_details');
-    //this.logout();
-  }
+
   async logout(){
     console.log('kjh');
     localStorage.removeItem("user_details");
+    if (!(this.userid)) {
+      console.log("DOH!");
+      this.usercheck =true;
+   
+  }else{
+    console.log("D0000OH!");
+    this.usercheck = true;
+  }
     this.router.navigateByUrl('/login');
+  }
+  // 8240030693
+  
+
+  ngOnInit() {
+    this.userid = localStorage.getItem('user_details');
+    if (!(this.userid)) {
+      console.log("DOH!");
+      this.usercheck =false;
+     this.usercheck1=true
+  }else{
+    console.log("D0000OH!");
+    this.usercheck1 = false;
+    this.usercheck= true
+  }
   }
 }
 

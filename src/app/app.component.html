@@ -45,8 +45,10 @@
         </ion-content>
     </ion-menu>
     <ion-router-outlet id="content1" main></ion-router-outlet>
+
     <ion-tabs>
-        <div *ngIf="!this.userid">
+        <!-- <div *ngIf="!this.userid"> -->
+            <div *ngIf="usercheck1">
             <ion-tab-bar slot="bottom">
                 <ion-tab-button tab="home">
                     <ion-icon name="home"></ion-icon>
@@ -63,7 +65,7 @@
             </ion-tab-bar>
         </div>
 
-        <div *ngIf="this.userid">
+        <div *ngIf="usercheck">
             <ion-tab-bar slot="bottom">
                 <ion-tab-button tab="home">
                     <ion-icon name="home"></ion-icon>
@@ -73,7 +75,7 @@
                     <ion-icon name="car"></ion-icon>
                     <ion-label>Our Catagories</ion-label>
                 </ion-tab-button>
-                <ion-tab-button tab="logout">
+                <ion-tab-button tab="logout" (click)="logout()">
                     <ion-icon name="log-out"></ion-icon>
                     <ion-label>Logout</ion-label>
                 </ion-tab-button>

@@ -30,6 +30,7 @@ export class LoginPage implements OnInit {
         this.storage.set('user_details',this.userId);
         localStorage.setItem("user_details", JSON.stringify(this.userId));
         this.router.navigate(['/home']);
+       
       }
     });
   //this.router.navigate(['/order-details']);
